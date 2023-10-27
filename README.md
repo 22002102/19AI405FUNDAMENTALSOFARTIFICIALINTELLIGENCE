@@ -1,25 +1,102 @@
-# 19AI405 FUNDAMENTALS OF ARTIFICIALINTELLIGENCE 
-# Laboratory Experiments
-Dear Learners,
-I have created a GITHUB repo of Lab Experiments. There are about 8 Experiments, each present in a Folder with description and a Python Program associated with it.
+# Exp 1 : Implement Depth First Search Traversal of a Graph
+```
+NAME : SANJAY S
+REG NO : 212222230132
+```
 
-You can download the Program and Execute and a Sample Screenshot can be taken and added to the Records.
+### Aim:
+To Implement Depth First Search Traversal of a Graph using Python 3.
+
+### Theory:
+Depth First Traversal (or DFS) for a graph is like Depth First Traversal of a tree. The only catch here is that, unlike trees, graphs may contain cycles (a node may be visited twice). Use a Boolean visited array to avoid processing a node more than once. A graph can have more than one DFS traversal. Depth-first search is an algorithm for traversing or searching trees or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking.
+
+Step 1: Initially, stack and visited arrays are empty.
+
+ ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/640b3c6f-3ac1-49a2-a955-68da9a71f446)
+ 
+Queue and visited arrays are empty initially.
+Stack and visited arrays are empty initially.
+
+Step 2: Visit 0 and put its adjacent nodes which are not visited yet into the stack.
+
+ ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/86dcf7d9-1f9d-49b0-a821-5976a6e77606)
+ 
+Visit node 0 and put its adjacent nodes (1, 2, 3) into the stack
 
 
- These are the List of Experiments
- <ol>
-<li>Implement Depth First Search Traversal</li>
-<li>Implement Breadth First Search Traversal</li>
-<li>Implement A* Search Algorithm</li>
-<li>Implement Simple Hill Climbing Algorithm</li>
-<li>Implement Minimax Search Algorithm </li>
-<li>Implement alpha-beta Pruning Algorithm</li>
-<li>Solve Cryptarithmetic Problem</li>
-<li>Implement Wumpus world Problem.</li>
+Step 3: Now, Node 1 at the top of the stack, so visit node 1 and pop it from the stack and put all of its adjacent nodes which are not visited in the stack.
 
- </ol>
-<br>
-<hr>
+ ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/e6017942-08b1-4742-87ad-c97eb97bf985)
+ 
 
 
- <strong>Note: </strong> Just Python with IDLE  in windows is more than sufficient for Execution of Programs. No third-Party Libraries are used.
+Step 4: Now, Node 2 at the top of the stack, so visit node 2 and pop it from the stack and put all of its adjacent nodes which are not visited (i.e, 3, 4) in the stack.
+
+ ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/6e6d123c-60ae-4f9c-a27c-c4fc7e57d57c)
+ 
+
+ Visit node 2 and put its unvisited adjacent nodes (3, 4) into the stack
+
+
+Step 5: Now, Node 4 at the top of the stack, so visit node 4 and pop it from the stack and put all of its adjacent nodes which are not visited in the stack.
+
+ ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/20b76a05-5668-4da5-8189-e10fb1bb7238)
+ 
+
+ Visit node 4
+
+
+Step 6: Now, Node 3 at the top of the stack, so visit node 3 and pop it from the stack and put all of its adjacent nodes which are not visited in the stack.
+
+ ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/3b88f04a-7846-4f75-89b4-22bbd5b48e52)
+ 
+
+Now, the Stack becomes empty, which means we have visited all the nodes, and our DFS traversal ends.
+
+### Algorithm:
+1. Construct a Graph with Nodes and Edges
+2. Depth First Search Uses Stack and Recursion
+3. Insert a START node to the STACK
+4. Find its Successors Or neighbors and Check whether the node is visited or not
+5. If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.
+
+ ### Program:
+ ```
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='A'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+ ```  
+###  Input
+![image](https://github.com/22002102/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/119091638/6bc55599-151c-4057-8330-46888e1cfa0e)
+
+### Output
+![image](https://github.com/22002102/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/119091638/436ffade-4972-491d-9a1a-74dd0c094076)
+
+
+### Input
+![image](https://github.com/22002102/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/119091638/39db141a-4e68-47c4-be4a-41c4a00aeb26)
+
+### Output
+![image](https://github.com/22002102/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/119091638/8ee78f66-fd50-4146-bacd-2b86d9660287)
+
+
+### Result:
+Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.
