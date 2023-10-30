@@ -84,10 +84,13 @@ G 5 <br>
 H 3 <br>
 I 1 <br>
 J 0 <br>
-<hr>
-<h2>Sample Output</h2>
-<hr>
-Path found: ['A', 'F', 'G', 'I', 'J']
+
+### Sample Output:
+
+Path found: 
+
+![image](https://github.com/22002102/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/119091638/3f5a781a-375d-40c9-936a-27a8bf7df027)
+
 
 
 <hr>
@@ -113,7 +116,12 @@ C 99 <br>
 E 7 <br>
 D 1 <br>
 G 0 <br>
-<hr>
-<h2>Sample Output</h2>
-<hr>
-Path found: ['A', 'E', 'D', 'G']
+
+### Sample Output:
+
+Path found:
+![image](https://github.com/22002102/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/119091638/1c232d71-04d3-419d-9c29-6fca316ee61b)
+
+### Result:
+Thus,a Graph was constructed and implementation of A* Search for the same graph was
+done successfully.
