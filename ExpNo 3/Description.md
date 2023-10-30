@@ -1,16 +1,20 @@
-<h1>ExpNo 3 : Implement A* search algorithm for a Graph</h1> 
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h1>Exp 3 : Implement A* search algorithm for a Graph</h1> 
+
+```
+NAME : SANJAY S
+REG NO : 212222230132
+```
 <H3>Aim:</H3>
 <p>To ImplementA * Search algorithm for a Graph using Python 3.</p>
 <H3>Algorithm:</H3>
-// A* Search Algorithm
+
 1.  Initialize the open list
 2.  Initialize the closed list
     put the starting node on the open 
     list (you can leave its f at zero)
 
 3.  while the open list is not empty
+   
     a) find the node with the least f on 
        the open list, call it "q"
 
@@ -20,6 +24,7 @@
        parents to q
    
     d) for each successor
+    
         i) if successor is the goal, stop search
         
         ii) else, compute both g and h for successor
@@ -41,7 +46,7 @@
             successor  is in the CLOSED list which has
             a lower f than successor, skip this successor
             otherwise, add  the node to the open list
-     end (for loop)
+             end (for loop)
   
     e) push q on the closed list
     end (while loop)
